@@ -12,7 +12,10 @@ app.use(cors());
 // app.use(bodyParser.json());
 app.use(express.urlencoded({ extended:false }));
 
-const port = 4000
+const port = 4000;
+app.get('/', (req, res) =>{
+    res.send("it's working")
+})
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
